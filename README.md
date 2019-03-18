@@ -1,0 +1,33 @@
+- git add 添加新的文件到版本库
+- git add -u 仅监控已经被**add**的文件（即tracked file） 不会提交新文件
+- git commit 提交修改
+- git status 查看版本库的状态
+- git diff 查看文件修改前后的区别 
+- git log --pretty=oneline 查看提交日志
+- git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况
+- git reset --hard HEAD^ 回退到上一个版本 ， HEAD^^表示前2个版本，前100个版本可以写成HEAD~100
+- git reset — hard commit_id 可以回到对应提交id的版本
+- git reflog 查看命令历史，
+- git checkout -- <file> 撤销修改， 回到上一次add或者commit时的状态
+- git reset HEAD <file> 撤销暂存区的修改， 回到add之前，
+- 工作区： 当前工作的文件夹 working directionary
+- 暂存区： add之后添加到的地方
+- git rm test.txt 删除文件， 之后可以直接commit提交删除操作
+- 不小心从本地删除文件 git checkout -- file_name 可以重新恢复
+- git remote add origin git@github.com:XuedaoYuan/learngit.git  本地仓库和远程库关联
+- **git push -u origin master** 推送本地仓库到远程库，
+- 把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+- 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+- 以后做了修改就可以 git push origin master 把本地master分支的最新修改推送到origin远程仓库
+- git remote -v   查看自己的权限
+- git remote set-url origin url   迁移远程分支
+- git branch dev 创建dev分支
+- git checkout dev 切换为dev分支
+- git branch 查看当前分支和其余分支
+- git merge dev 合并指定分支到（dev） 到当前分支， 使用fast forward模式
+- git branch -d dev 删除dev分支
+- git merge --no-ff -m "merge with no-ff" dev 不适用fast forward模式合并分支， 此种方法会保留分支记录
+- git stash 存储工作现场， 等以后恢复现场后继续工作： 这个主要用于当有临时bug需要修复，但是当前工作未完成， 需要先修bug， 但是不提交
+- git stash list 存储列表
+- git stash pop 恢复工作现场
+- git branch -D feature-vulcan      feature-vulcan分支如果还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数。
